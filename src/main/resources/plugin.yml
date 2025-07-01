@@ -1,0 +1,4 @@
+name: PriSKm
+version: '1.0-SNAPSHOT'
+main: com.pryzmm.priSKm.PriSKm
+api-version: '1.21'
