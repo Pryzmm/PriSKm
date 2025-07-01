@@ -60,8 +60,6 @@ public class VaultDisplayItem extends SkriptEvent {
 
     @Override
     public boolean check(Event event) {
-        // Since we're not filtering based on conditions, just return true
-        // The event will fire for all VaultDisplayItemEvent instances
         return event instanceof VaultDisplayItemEvent;
     }
 

@@ -26,7 +26,6 @@ public class PriSKm extends JavaPlugin {
         addon = Skript.registerAddon(this);
 
         try {
-            // Register your custom syntax elements
             registerSyntax();
             getLogger().info("Successfully loaded " + getDescription().getName() + " v" + getDescription().getVersion());
         } catch (Exception e) {
@@ -37,7 +36,7 @@ public class PriSKm extends JavaPlugin {
     }
 
     private void registerSyntax() throws IOException {
-        addon.loadClasses("com.pryzmm.priSKm.effects");
+        addon.loadClasses("com.pryzmm.priSKm.expressions");
         addon.loadClasses("com.pryzmm.priSKm.events");
     }
 
