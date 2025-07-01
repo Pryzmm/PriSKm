@@ -1,4 +1,7 @@
 name: PriSKm
 version: '1.0-SNAPSHOT'
 main: com.pryzmm.priSKm.PriSKm
+depend: [Skript]
 api-version: '1.21'
+authors: [Pryzmm]
+description: A Skript addon to add features older plugins had (and some others I wanted)
