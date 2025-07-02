@@ -17,13 +17,11 @@ import org.jetbrains.annotations.Nullable;
 public class VaultDisplayItem extends SkriptEvent {
 
     static {
-        // Register the event
         Skript.registerEvent("Vault Display Item", VaultDisplayItem.class, VaultDisplayItemEvent.class,
                 "[on] vault display[ing] item",
                 "[on] display[ing] vault item"
         );
 
-        // Register event values so they can be accessed in Skript
         EventValues.registerEventValue(VaultDisplayItemEvent.class, ItemStack.class, new Getter<>() {
             @Override
             public ItemStack get(VaultDisplayItemEvent event) {

@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
 public class ThunderState extends SkriptEvent {
 
     static {
-        // Register the event
         Skript.registerEvent("Thunder State Change", ThunderState.class, ThunderChangeEvent.class,
                 "[on] thunder [state] change",
                 "[on] change [state [of]] thunder"
