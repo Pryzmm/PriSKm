@@ -36,8 +36,10 @@ public class PriSKm extends JavaPlugin {
     }
 
     private void registerSyntax() throws IOException {
+        addon.loadClasses("com.pryzmm.priSKm.conditions");
         addon.loadClasses("com.pryzmm.priSKm.expressions");
         addon.loadClasses("com.pryzmm.priSKm.events");
+        addon.loadClasses("com.pryzmm.priSKm.types");
     }
 
     @Override

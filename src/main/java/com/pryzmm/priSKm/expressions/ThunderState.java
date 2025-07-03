@@ -14,14 +14,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class ThunderStateExpr extends SimpleExpression<Boolean> {
+public class ThunderState extends SimpleExpression<Boolean> {
 
-    // The expression that will hold the world
     private Expression<World> world;
 
     static {
-        // Register the expression with Skript
-        Skript.registerExpression(ThunderStateExpr.class, Boolean.class, ExpressionType.PROPERTY,
+        Skript.registerExpression(ThunderState.class, Boolean.class, ExpressionType.PROPERTY,
                 "[the] thunder state of %world%",
                 "%world%'s thunder state"
         );
@@ -30,7 +28,6 @@ public class ThunderStateExpr extends SimpleExpression<Boolean> {
     @Override
     @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
-        // Cast the first expression to a World expression
         world = (Expression<World>) exprs[0];
         return true;
     }
@@ -59,7 +56,6 @@ public class ThunderStateExpr extends SimpleExpression<Boolean> {
         return "thunder state of " + world.toString(event, debug);
     }
 
-    // This method defines what change modes are supported
     @Override
     public Class<?>[] acceptChange(Changer.ChangeMode mode) {
         if (Objects.requireNonNull(mode) == Changer.ChangeMode.SET) {
@@ -68,7 +64,6 @@ public class ThunderStateExpr extends SimpleExpression<Boolean> {
         return null;
     }
 
-    // This method handles the actual changing of values
     @Override
     public void change(Event event, @Nullable Object[] delta, Changer.ChangeMode mode) {
         World w = world.getSingle(event);
