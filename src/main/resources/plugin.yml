@@ -1,5 +1,5 @@
 name: PriSKm
-version: '1.0-SNAPSHOT'
+version: '1.0.0'
 main: com.pryzmm.priSKm.PriSKm
 depend: [Skript]
 api-version: '1.21'
