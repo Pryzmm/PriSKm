@@ -22,6 +22,7 @@ public class IsBlockClipping extends Condition {
     private Expression<Player> player;
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
         player = (Expression<Player>) exprs[0];
         // matchedPattern 0 = "is block clipping", 1 = "is not block clipping"

@@ -50,7 +50,6 @@ public class DripstoneThicknessType {
         return thickness != null ? thickness.hashCode() : 0;
     }
 
-    // Register this type with Skript
     static {
         Classes.registerClass(new ClassInfo<>(DripstoneThicknessType.class, "dripstonethickness")
                 .parser(new Parser<DripstoneThicknessType>() {

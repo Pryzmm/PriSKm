@@ -21,7 +21,7 @@ public class ThunderState extends SimpleExpression<Boolean> {
     static {
         Skript.registerExpression(ThunderState.class, Boolean.class, ExpressionType.PROPERTY,
                 "[the] thunder state of %world%",
-                "%world%'s thunder state"
+                "%world%['s] thunder state"
         );
     }
 

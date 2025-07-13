@@ -1,3 +1,4 @@
+// priSKm/PriSKm.java
 package com.pryzmm.priSKm;
 
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,21 +16,13 @@ public class PriSKm extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        // Check if Skript is installed and enabled
-        if (getServer().getPluginManager().getPlugin("Skript") == null) {
-            getLogger().severe("Skript is not installed! This plugin requires Skript to function.");
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
-
-        // Register this plugin as a Skript addon
         addon = Skript.registerAddon(this);
 
         try {
             registerSyntax();
-            getLogger().info("Successfully loaded " + getDescription().getName() + " v" + getDescription().getVersion());
+            getLogger().info("Successfully loaded PriSKm " + getDescription().getVersion());
         } catch (Exception e) {
-            getLogger().severe("Failed to load addon: " + e.getMessage());
+            getLogger().severe("Failed to load PriSKm: " + e.getMessage());
             e.printStackTrace();
             getServer().getPluginManager().disablePlugin(this);
         }
@@ -40,6 +33,13 @@ public class PriSKm extends JavaPlugin {
         addon.loadClasses("com.pryzmm.priSKm.expressions");
         addon.loadClasses("com.pryzmm.priSKm.events");
         addon.loadClasses("com.pryzmm.priSKm.types");
+        addon.loadClasses("com.pryzmm.priSKm.effects");
+        if (getServer().getPluginManager().getPlugin("VivecraftSpigot") != null) {
+            getLogger().info("Found VivecraftSpigot, loading VR syntaxes...");
+            addon.loadClasses("com.pryzmm.priSKm.vive");
+        } else {
+            getLogger().warning("Could not find VivecraftSpigot as an addon, cannot register syntaxes relating to VR support.");
+        }
     }
 
     @Override

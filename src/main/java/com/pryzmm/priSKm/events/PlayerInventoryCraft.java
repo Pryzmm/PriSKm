@@ -48,7 +48,7 @@ public class PlayerInventoryCraft extends SkriptEvent {
     @Override
     public boolean check(Event event) {
         CraftItemEvent craftEvent = (CraftItemEvent) event;
-        return craftEvent.getInventory().getType() == InventoryType.CRAFTING; // misleading, don't know why InventoryType.PLAYER isn't what needs to be used
+        return craftEvent.getInventory().getType() == InventoryType.CRAFTING;
     }
 
     @Override

@@ -2,6 +2,7 @@ name: PriSKm
 version: '1.0.0'
 main: com.pryzmm.priSKm.PriSKm
 depend: [Skript]
+softdepend: [VivecraftSpigot]
 api-version: '1.21'
 authors: [Pryzmm]
 description: A Skript addon to add features other plugins don't have.
