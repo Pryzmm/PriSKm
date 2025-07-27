@@ -14,22 +14,8 @@ public class DripstoneThicknessType {
         this.thickness = thickness;
     }
 
-    public PointedDripstone.Thickness getThickness() {
-        return thickness;
-    }
-
     public String getName() {
         return thickness.name().toLowerCase().replace('_', ' ');
-    }
-
-    public int getNumericValue() {
-        return switch (thickness) {
-            case TIP_MERGE -> 0;
-            case TIP -> 1;
-            case FRUSTUM -> 2;
-            case MIDDLE -> 3;
-            case BASE -> 4;
-        };
     }
 
     @Override
